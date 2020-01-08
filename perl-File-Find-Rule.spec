@@ -4,7 +4,7 @@
 #
 Name     : perl-File-Find-Rule
 Version  : 0.34
-Release  : 11
+Release  : 12
 URL      : https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/File-Find-Rule-0.34.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/File-Find-Rule-0.34.tar.gz
 Summary  : unknown
@@ -12,6 +12,7 @@ Group    : Development/Tools
 License  : GPL-1.0
 Requires: perl-File-Find-Rule-bin = %{version}-%{release}
 Requires: perl-File-Find-Rule-man = %{version}-%{release}
+Requires: perl-File-Find-Rule-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Text::Glob)
 
@@ -21,7 +22,6 @@ No detailed description available
 %package bin
 Summary: bin components for the perl-File-Find-Rule package.
 Group: Binaries
-Requires: perl-File-Find-Rule-man = %{version}-%{release}
 
 %description bin
 bin components for the perl-File-Find-Rule package.
@@ -32,6 +32,7 @@ Summary: dev components for the perl-File-Find-Rule package.
 Group: Development
 Requires: perl-File-Find-Rule-bin = %{version}-%{release}
 Provides: perl-File-Find-Rule-devel = %{version}-%{release}
+Requires: perl-File-Find-Rule = %{version}-%{release}
 
 %description dev
 dev components for the perl-File-Find-Rule package.
@@ -45,14 +46,24 @@ Group: Default
 man components for the perl-File-Find-Rule package.
 
 
+%package perl
+Summary: perl components for the perl-File-Find-Rule package.
+Group: Default
+Requires: perl-File-Find-Rule = %{version}-%{release}
+
+%description perl
+perl components for the perl-File-Find-Rule package.
+
+
 %prep
 %setup -q -n File-Find-Rule-0.34
+cd %{_builddir}/File-Find-Rule-0.34
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -75,9 +86,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/File/Find/Rule.pm
-/usr/lib/perl5/vendor_perl/5.28.2/File/Find/Rule/Extending.pod
-/usr/lib/perl5/vendor_perl/5.28.2/File/Find/Rule/Procedural.pod
 
 %files bin
 %defattr(-,root,root,-)
@@ -92,3 +100,9 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %files man
 %defattr(0644,root,root,0755)
 /usr/share/man/man1/findrule.1
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/File/Find/Rule.pm
+/usr/lib/perl5/vendor_perl/5.30.1/File/Find/Rule/Extending.pod
+/usr/lib/perl5/vendor_perl/5.30.1/File/Find/Rule/Procedural.pod
