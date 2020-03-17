@@ -4,7 +4,7 @@
 #
 Name     : perl-File-Find-Rule
 Version  : 0.34
-Release  : 12
+Release  : 13
 URL      : https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/File-Find-Rule-0.34.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/File-Find-Rule-0.34.tar.gz
 Summary  : unknown
@@ -103,6 +103,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.1/File/Find/Rule.pm
-/usr/lib/perl5/vendor_perl/5.30.1/File/Find/Rule/Extending.pod
-/usr/lib/perl5/vendor_perl/5.30.1/File/Find/Rule/Procedural.pod
+/usr/lib/perl5/vendor_perl/5.30.2/File/Find/Rule.pm
+/usr/lib/perl5/vendor_perl/5.30.2/File/Find/Rule/Extending.pod
+/usr/lib/perl5/vendor_perl/5.30.2/File/Find/Rule/Procedural.pod
