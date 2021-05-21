@@ -103,6 +103,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.32.1/File/Find/Rule.pm
-/usr/lib/perl5/vendor_perl/5.32.1/File/Find/Rule/Extending.pod
-/usr/lib/perl5/vendor_perl/5.32.1/File/Find/Rule/Procedural.pod
+/usr/lib/perl5/vendor_perl/5.34.0/File/Find/Rule.pm
+/usr/lib/perl5/vendor_perl/5.34.0/File/Find/Rule/Extending.pod
+/usr/lib/perl5/vendor_perl/5.34.0/File/Find/Rule/Procedural.pod
