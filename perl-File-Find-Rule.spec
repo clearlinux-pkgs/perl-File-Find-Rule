@@ -4,7 +4,7 @@
 #
 Name     : perl-File-Find-Rule
 Version  : 0.34
-Release  : 17
+Release  : 18
 URL      : https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/File-Find-Rule-0.34.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/File-Find-Rule-0.34.tar.gz
 Summary  : unknown
